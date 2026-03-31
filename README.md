@@ -2,7 +2,7 @@
 
 Repositório de atividades da disciplina Pensamento Computacional, Algoritmos e Programação.
 
-👤 Estudante: Seu Nome Completo
+👤 Estudante: LUCAS KLIPAN MIQUELIN 
 
 📍 IFPR — Centro de Referência Ponta Grossa | 1º ano | 2026
 
