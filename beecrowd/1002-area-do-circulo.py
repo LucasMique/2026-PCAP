@@ -17,7 +17,7 @@ R = float(input())
 pi = 3.14159
 
 # qual é a fórmula da área do círculo?
-AREA =  (R * 2) * pi
+AREA =  (R ** 2) * pi
 
 # Saída - observe o formato exato e o número de casas decimais no enunciado
 print(f"A={AREA:.4f}")
