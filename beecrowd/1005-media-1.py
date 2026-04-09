@@ -20,4 +20,4 @@ media = (A * 3.5 + B * 7.5) / 11
 
 # :.5f dentro da f-string -> formata o número com exatamente 5 casas decimais
 # O enunciado exige espaço antes e depois do = - seguir á risca
-print(f"MEDIA = {media:.5f}")'''
+print(f"MEDIA = {media:.5f}")
