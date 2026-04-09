@@ -30,4 +30,4 @@ s = N % 60
 
 # f-string monta o formato h:m:s - sem zeros á esquerda
 
-print(f"{h}:{m}:{s}")'''
+print(f"{h}:{m}:{s}")
