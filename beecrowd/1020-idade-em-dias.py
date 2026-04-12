@@ -10,24 +10,26 @@ estudante: Lucas Klipan Miquelin
 # processamento: pegar dias, meses
 # saída: no formato h:m:s (sem zeros á esquerda - 0:9:16, não 00:09:16)
 
-#int(input()) duração sempre é um numero inteiro de segundos
+#int(input()) duração sempre é um numero inteiro de dias
 N = int(input())
 
 # // divisão inteira: retorna quantas vezes o divisor cabe no dividendo
 # %  módulo: retorna apenas o segundo da divisão
 
-#quantas horas completas cabem em N segundos? (1 hora = 3600 segundos)
-h = N // 3600
+#quantos anos completos cabem em N dias? (1 ano = 365 dias)
+h = N // 365
 
-#segundos restantes após retirar as horas completas
-N = N % 3600
+#dias restantes após retirar os anos completos
+N = N % 365
 
-# quantos minutos completos cabem nos segundos restantes? (1 min igual 60 segundos)
-m = N // 60
+# quantos meses completos cabem nos dias restantes? (1 mes igual 30 dias)
+m = N // 30
 
-# segundos que sobram após retirar os minutos completos
-s = N % 60
+# dias que sobram após retirar os meses completos
+s = N % 30
 
 # f-string monta o formato h:m:s - sem zeros á esquerda
 
-print(f"{h}:{m}:{s}")
+print(f"{h} ano(s)")
+print(f"{m} mes(es)")      
+print(f"{s} dia(s)")
