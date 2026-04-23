@@ -1,1 +1,1 @@
-# falta terminar: 1050 e 1052
+# falta terminar: 1050 e 1052 e 1038
