@@ -1,1 +1,1 @@
-# falta terminar: 1050 e 1052 e 1038
+# falta terminar: 1050 (ddd) e 1052 (mes) e 1038 (lanche)
