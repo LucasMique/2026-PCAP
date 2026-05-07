@@ -13,6 +13,19 @@ estudante: Lucas KlipaN Miquelin
 # entrada
 A, B = input().split()
 
+A = float(A)
+B = float(B)
+
 # processamento
-if A % 2 is 0:
-    A = 
+if A == 1:
+    A = 4.00
+elif A == 2:
+    A = 4.50
+elif A == 3:
+    A = 5.00
+elif A == 4:
+    A = 2.00
+elif A == 5:
+    A = 1.50
+
+print (f"Total: R$ {A * B:.2f}")
