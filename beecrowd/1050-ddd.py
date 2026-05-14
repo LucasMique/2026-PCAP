@@ -3,9 +3,18 @@ problema: beecrowd | 1050
 data: 2026.05.07
 estudante: lucas klipan miquelin
 '''
+# Objetivo: Selecionar DDD de uma lista já predeterminada.
 
+# --- ANÁLISE (liac) ---
+# entrada: número de 2 digitos.
+#processamento: If e Elifs; caso seja qualquer desses números, dê print do estado com ddd equivalente ao número
+#saída: cidades
+
+#entrada: input com int
 n = int(input())
 
+# Processamento: ver qual desses é o número; caso um não for, vai para o outro
+# saída caso for, dê print na cidade equivalente ao DDD.
 if n == 61:
     print("Brasilia")
 elif n == 71:

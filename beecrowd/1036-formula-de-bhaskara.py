@@ -10,14 +10,17 @@ A = float(A)
 B = float(B)
 C = float(C)
 
-SAHUR =(4 * (A * C)) ** 0.5
-if SAHUR ==
-
-TRALALERO = (-B - (((B * B) - (4 * (A * C))) ** 0.5)) / (2 * A)
-
-if TRALALERO == 0 or TRALALERO < 0 or SAHUR == 0 or SAHUR < 0:
+TUNG =((B ** 2) - (4 * (A * C)))
+if TUNG <= 0:
     print("Impossivel calcular")
 else:
-    print(f"R1 = {TRALALERO:.5f}")
-    print(f"R2 = {SAHUR:.5f}")
+    TUNG = TUNG ** 0.5
+    SAHUR = (-B + TUNG) / (A * 2)
+    TRALALERO = (-B - TUNG) / (A * 2)
+    print(f"R1 = {SAHUR:.5f}")
+    print(f"R2 = {TRALALERO:.5f}")
 
+# Quem construiu a máquina que constrói maquinas?
+# Essa frase é falsa.
+# Um conjunto de conjuntos contém a si mesmo?
+# Nova missão: Não faça essa missão.
