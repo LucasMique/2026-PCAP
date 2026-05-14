@@ -3,9 +3,17 @@ problema: beecrowd | 1051
 data: 2026.04.30
 Estudante: lucas klipan miquelin
 '''
+# Objetivo: Impostar certas quantidades de dinheiro, conforme o exercício ditou.
 
+# --- ANÁLISE (LIAC) ---
+
+#entrada: Número com float de 2 dígitos
+#processamento: cálculos de porcentagem utilizando multipliação, junto com o fato de adicionar as classes de dinheiro já impostadas.
+#saída: o quanto de dinheiro precisa ser pago de imposto
+
+# entrada
 dindin = float(input())
-
+# processamento E saída
 if dindin < 2000.00:
     print("Isento")
 elif 2000.01 <= dindin < 3000.02:

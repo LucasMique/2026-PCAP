@@ -3,9 +3,18 @@ problema: beecrowd | 1052
 data: 2026.05.07
 estudante: lucas klipan miquelin
 '''
+#objetivo: classificar um número ao seu mês correspondente em inglês.
 
+# --- ANÁLISE (liac) ---
+
+# entrada: número inteiro
+# processamento: ifs e elifs
+# saída: mês correspondente ao número, mês na linguagem inglesa.
+
+# entrada:
 m = int(input())
 
+# processamento e saída
 if m == 1:
     print("January")
 elif m == 2:
