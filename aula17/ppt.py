@@ -8,18 +8,26 @@
 
 import random
 
-# Base herdada da v1: as três opções e o sorteio da máquina
+# Tudo isto já vem pronto da v1 e v2: sortear, ler e limpar a jogada
 opcoes = ["pedra", "papel", "tesoura"]
 jogada_maquina = random.choice(opcoes)
 
-# Lemos a jogada e NORMALIZAMOs o texto (deixar igual para poder comparar)
 entrada = input("Sua jogada(pedra, papel ou tesoura): ")
-jogada_jogador = entrada.lower().strip() # tudo minúsculo e sem espaços nas pontas
+jogada_jogador = entrada.lower().strip()
+print("Você jogou:", jogada_jogador, "| Máquina:", jogada_maquina)
 
-# Validação: a jogada digitada está entre as opções válidas?
+# Decidimos o resultado comparando as duas jogadas (textos)
+# A ORDEM dos testes importa: primeiro inválida, segundo empate, depois as vitórias
 if jogada_jogador not in opcoes:
-    print("Jogada inválida! Digite pedra, papel ou tesoura.")
-else:
-    # Texto limpo e válido: agora é seguro motrar as duas jogadas
-    print("Você jogou:", jogada_jogador)
-    print("A máquina jogou:", jogada_maquina)
+    print("Jogada inválida! Digite pedra, papel, ou tesoura.")
+elif jogada_jogador == jogada_maquina:
+    print("Empate! os dois jogaram", jogada_maquina)
+# as três (e únicas) formas de o JOGADOR vencer - a regra clássica
+elif jogada_jogador == "pedra" and jogada_maquina == "tesoura":
+    print("Você venceu! Pedra quebra tesoura.")
+elif jogada_jogador == "papel" and jogada_maquina == "pedra":
+    print("Você venceu! Papel embrulha pedra.")
+elif jogada_jogador == "tesoura" and jogada_maquina == "papel":
+    print("Você venceu! Tesoura corta papel.")
+else:    # não caiu em nenhuma vitória acima -> sobra a máquina
+    print(" A maquina venceu! ela jogou", jogada_maquina)
