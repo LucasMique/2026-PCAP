@@ -14,8 +14,6 @@ pontos_maquina_troll = 0
 # Variável que decide se o jogo acontece ou não; no final se decide se repete ou não.
 jogar_dnv = "sim"
 
-# Váriavel que escolhe a difficuldade. Pode parecer estranho, mais quanto mais números mais difficuldade, já que a chance de cair um número par é menor em relação á de impar, e vice versa.
-numero_escolhido = int(input("Difficuldade: Escolha até que número a ia pode escolher: "))
 
 def resultado(jogador_troll, maquina_troll):
     if (jogador_troll + maquina_troll) % 2 == 0:
@@ -25,6 +23,7 @@ def resultado(jogador_troll, maquina_troll):
 
 # Enquanto a variável jogar_dnv estiver em "sim", o jogo irá acontecer.
 while jogar_dnv == "sim":
+    # Váriavel que escolhe a difficuldade. Pode parecer estranho, mais quanto mais números mais difficuldade, já que a chance de cair um número par é menor em relação á de impar, e vice versa.
     numero_escolhido = int(input("Difficuldade: Escolha até que número a ia pode escolher: "))
     pontos_jogador_troll = 0
     pontos_maquina_troll = 0
@@ -34,6 +33,7 @@ while jogar_dnv == "sim":
         jogador_tenebroso = input("Par ou impar?: ").lower().strip()
         jogador_troll = int(input("Seu palpite (0 a 5): "))
         retorno = resultado(jogador_troll, maquina_troll)
+        print("Jogada da máquina:", maquina_troll)
         if jogador_tenebroso not in opcoes:
             print("Escolha PAR ou IMPAR.")
             pontos_maquina_troll = pontos_maquina_troll + 1
@@ -47,4 +47,6 @@ while jogar_dnv == "sim":
             print("Você perdeu.")
             pontos_maquina_troll = pontos_maquina_troll + 1
     print("Placar -> Você:", pontos_jogador_troll, "| Máquina:", pontos_maquina_troll)
-    jogar_dnv = input("Jogar de novo?(sim ou não)(com a mesma difficuldade): ").lower().strip() # Jogar denovo sem fechar o programa? Aqui pode!
+    jogar_dnv = input("Jogar de novo?(sim ou não): ").lower().strip() # Jogar denovo sem fechar o programa? Aqui pode!
+    if jogar_dnv is not "sim" or "nao":
+        print("Sim ou não. Você perdeu a sua chance de jogar denovo.")
