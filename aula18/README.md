@@ -27,9 +27,9 @@ Uma função decide quem venceu e o programa soma os pontos das 5 rodadas.
 Conceito pretendido: B
 ​
 Justificativa (cite arquivo e linha de cada critério):
-- O jogo funciona ............: par_impar.py, linhas 18, 28-50.
+- O jogo funciona ............: par_impar.py, linhas 18, 27-52.
 - Funções e operador % .......: par_impar.py, linha 20-24  (def/return, soma % 2)
 - Documentação e Git .........: este README + commits no GitHub
-- Extensão/originalidade .....: par_impar.py, linha 14-18, 27, 49 (o que eu criei — jogar de novo, e escolher a difficuldade)
+- Extensão/originalidade .....: par_impar.py, linha 14-18, 27, 50-52 (o que eu criei — jogar de novo, e escolher a difficuldade)
 ​
 Autor: Lucas Klipan Miquelin
