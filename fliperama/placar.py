@@ -13,3 +13,15 @@ def salvar_placar(vezes):
     for i in range(3):
         arquivo.write(NOMES[i] + ',' + str(vezes[i]) + '\n')
     arquivo.close()
+
+def carregar_placar():
+    arquivo = open(ARQUIVO, 'r')
+    linhas = arquivo.readlines()
+    arquivo.close()
+
+    vezes = []
+    for linha_lida in linhas:
+        pedacos = linha_lida.strip().split(',')
+        vezes.append(int(pedacos[1]))
+
+    return vezes
