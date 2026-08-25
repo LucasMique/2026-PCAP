@@ -4,7 +4,7 @@
 # Aula: 20
 # Autor: Lucas Klipan Miquelin
 # Data: 2026.08.04
-# Conceitos: 
+# Conceitos: jogo como módulo, randint
 # =========================================
 
 # importar biblioteas e funções de arquivos (módulos)
