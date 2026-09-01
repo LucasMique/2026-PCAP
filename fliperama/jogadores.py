@@ -1,9 +1,3 @@
-from os.path import exists
-from telas import titulo, linha
-from modulos import ler_opcao, ler_texto
-
-ARQUIVO = 'jogadores.csv'
-
 # ================================================================
 # ARQUIVO     : jogadores.py (pasta fliperama)
 # Disciplina  : Pensament computacional, Algoritimos e Programacao
@@ -27,6 +21,12 @@ ARQUIVO = 'jogadores.csv'
 #     E o cadastro e uma lista dessas listas.
 # ================================================================
 
+from os.path import exists
+from telas import titulo, linha
+from modulos import ler_opcao, ler_texto
+
+ARQUIVO = 'jogadores.csv'
+
 
 def cadastrar(jogadores):
     '''
@@ -37,6 +37,13 @@ def cadastrar(jogadores):
     titulo('NOVO JOGADOR')
 
     apelido = ler_texto('Apelido (sem espacos)').lower()
+
+    i = buscar(jogadores, apelido)
+    if i != -1:
+        print('Ja existe um jogador com esse apelido.')
+        linha()
+        return
+    
     nome = ler_texto('Nome completo')
 
     novo = [apelido, nome, '0']
@@ -47,13 +54,15 @@ def cadastrar(jogadores):
 
 
 def listar(jogadores):
-    titulo('JOGADORES CADASTRADOS')
+    titulo('TOP 10 JOGADORES')
 
     if len(jogadores) == 0:
         print('Nenhum jogador cadastrado ainda.')
     else:
-        for jogador in jogadores:
-            print(jogador[0] + ' | ' + jogador[1] + ' | ' + jogador[2] + ' partidas')
+        ranking = sorted(jogadores, key=lambda j: int(j[2]), reverse=True)
+
+        for i in range(len(ranking[:10])):
+            print(str(i + 1).rjust(2) + '. ' + ranking[i][0].ljust(6) + ' | ' + ranking[i][1].ljust(18) + ' | ' + ranking[i][2].rjust(3) + ' partidas')
 
     linha()
 

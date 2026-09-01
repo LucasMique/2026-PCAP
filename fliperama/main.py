@@ -15,16 +15,17 @@ from parimpar import resultado, jogar_parimpar
 from modulos import ler_opcao
 from placar import salvar_placar, carregar_placar
 from jogadores import menu_jogadores, salvar_jogadores, carregar_jogadores
+from fliperama.meujogo import mostrar_possibilidades_de_jogada, jogar_caraoucoroa
 
 NOME_DO_DONO = "lucas"
-OPCOES = ["0", "1", "2", "3", "4"]
-NOMES_DOS_JOGOS = ['Advinhe o Numero', 'Pedra-Papel-Tesoura', 'Par ou Impar']
+OPCOES = ["0", "1", "2", "3", "4", "5"]
+NOMES_DOS_JOGOS = ['Advinhe o Numero', 'Pedra-Papel-Tesoura', 'Par ou Impar', 'Cara ou Coroa']
 vezes_jogado = carregar_placar()
 jogadores = carregar_jogadores()
 
 def mostrar_placar():
     titulo('PLACAR')
-    for i in range(3):
+    for i in range(4):
         print(NOMES_DOS_JOGOS[i] + ': ' + str(vezes_jogado[i]) + 'x')
 
 while True:
@@ -33,7 +34,8 @@ while True:
     print('[1] - Jogo advinhe o número')
     print('[2] - Pedra-Papel-Tesoura')
     print('[3] - Par ou Impar')
-    print('[4] - Jogadores')
+    print('[4] - Cara ou Coroa')
+    print('[5] - Jogadores')
     linha()
     opcao = ler_opcao("Escolha uma opção", OPCOES)
 
@@ -43,7 +45,7 @@ while True:
         salvar_jogadores(jogadores)
         print("Até a Próxima!")
         break
-    if opcao == '4':
+    if opcao == '5':
         menu_jogadores(jogadores)
     else:
         indice = int(opcao) - 1
@@ -53,8 +55,9 @@ while True:
             jogar_advinhe
         elif opcao == '2':
             jogar_ppt()
-        else:
+        elif opcao == '3':
             jogar_parimpar()
-        
+        else:
+            jogar_caraoucoroa
 
     input('Pressione Enter para voltar ao menu...')

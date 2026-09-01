@@ -43,7 +43,7 @@ def jogar_ppt():
         mostrar_jogadas()
 
         jogador = int(ler_opcao('Sua jogada', ['0', '1', '2']))
-        computador= randint(0, 2)
+        computador = randint(0, 2)
 
         print('Você jogou ' + JOGADAS[jogador])
         print('Computador jogou ' + JOGADAS[computador])
