@@ -1,6 +1,6 @@
 from os.path import exists
 from telas import titulo, linha
-from modulos import ler_opcao
+from modulos import ler_opcao, ler_texto
 
 ARQUIVO = 'jogadores.csv'
 
@@ -29,10 +29,15 @@ ARQUIVO = 'jogadores.csv'
 
 
 def cadastrar(jogadores):
+    '''
+    Pergunta apelido e nome e acrescenta um jogador ao cadastro.
+    
+    Nao devolve nada: o cadastro muda no lugar.
+    '''
     titulo('NOVO JOGADOR')
 
-    apelido = input('Apelido (sem espacos): ').strip().lower()
-    nome = input('Nome completo: ').strip()
+    apelido = ler_texto('Apelido (sem espacos)').lower()
+    nome = ler_texto('Nome completo')
 
     novo = [apelido, nome, '0']
     jogadores.append(novo)
@@ -54,7 +59,16 @@ def listar(jogadores):
 
 
 def buscar(jogadores, apelido):
-    # Devolve a POSICAO do jogador na lista, ou -1 se nao achar.
+    '''
+    Procura um apelido no cadastro e diz ONDE ele esta.
+    
+    Parametros:
+        jogadores (list) - o cadastro inteiro
+        apelido   (str)  - o apelido procurado, em minusculas
+        
+    Retorno:
+        int - a posicao do jogador na lita, ou -1 se nao achar
+    '''
     for i in range(len(jogadores)):
         if jogadores[i][0] == apelido:
             return i
@@ -79,6 +93,9 @@ def alterar(jogadores):
 
 
 def excluir(jogadores):
+    '''
+    Pergunta qual jogador a ser excluido, e retira todas as suas informações do sistema, apagando-as.
+    '''
     listar(jogadores)
 
     apelido = input('Apelido de quem vai sair do cadastro: ').strip().lower()
@@ -149,4 +166,3 @@ def menu_jogadores(jogadores):
             alterar(jogadores)
         else:
             excluir(jogadores)
-
