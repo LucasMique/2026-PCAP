@@ -4,13 +4,13 @@
 # =============================================================
 
 ARQUIVO = 'placar.csv'
-NOMES = ['Advinhe o Numero', 'Pedra-Papel-Tesoura', 'Par ou Impar']
+NOMES = ['Advinhe o Numero', 'Pedra-Papel-Tesoura', 'Par ou Impar', 'Cara ou Coroa']
 
 
 def salvar_placar(vezes):
     # 'w' esvazia o arquivo e escreve tudo de novo.
     arquivo = open(ARQUIVO, 'w')
-    for i in range(3):
+    for i in range(4):
         arquivo.write(NOMES[i] + ',' + str(vezes[i]) + '\n')
     arquivo.close()
 

@@ -1,2 +1,0 @@
-# EXERCICIO DA PROVA N3:
-

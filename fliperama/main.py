@@ -15,7 +15,7 @@ from parimpar import resultado, jogar_parimpar
 from modulos import ler_opcao
 from placar import salvar_placar, carregar_placar
 from jogadores import menu_jogadores, salvar_jogadores, carregar_jogadores
-from fliperama.meujogo import mostrar_possibilidades_de_jogada, jogar_caraoucoroa
+from meujogo import mostrar_possibilidades_de_jogada, jogar_caraoucoroa
 
 NOME_DO_DONO = "lucas"
 OPCOES = ["0", "1", "2", "3", "4", "5"]
@@ -57,7 +57,7 @@ while True:
             jogar_ppt()
         elif opcao == '3':
             jogar_parimpar()
-        else:
-            jogar_caraoucoroa
+        elif opcao == '4':
+            jogar_caraoucoroa()
 
     input('Pressione Enter para voltar ao menu...')
