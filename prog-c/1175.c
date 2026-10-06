@@ -1,6 +1,6 @@
 /*
  * Disciplina: 2026-PCAP
- * Problema  : becrowd 1172 - Array Replacement I
+ * Problema  : becrowd 1175 - Array Change I
  * Autor     : Lucas Klipan Miquelin
  * LIAC      : Leia vinte inteiros num vetor N. Mostre o vetor com a ordem invertida: o último lido aparece na posição 0, o primeiro lido na posição 19.
 */
