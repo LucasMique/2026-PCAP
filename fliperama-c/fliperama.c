@@ -61,6 +61,12 @@ int cadastrar(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
     char novo[TAM_APELIDO];
 
     titulo("NOVO JOGADOR");
+
+    if (qtd >= CAPACIDADE) {
+        printf("Limite de capacidade atingido!\n");
+        return qtd;
+    }
+
     ler_texto("Apelido (sem espacos)", novo);
 
     if (buscar(apelidos, qtd, novo) != -1) {
