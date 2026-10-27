@@ -78,6 +78,7 @@ int cadastrar(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
     partidas[qtd] = 0;
     printf("Jogador %s cadastrado.\n", novo);
     return qtd + 1;
+    salvar(apelidos, partidas, qtd);
 }
 
 void listar(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
@@ -103,8 +104,7 @@ void jogar_advinhe(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
         printf("Cadastre esse apelido antes de jogar.\n");
         return;
     }
-
-    partidas[pos] = partidas[pos] + 1;
+    
     segredo = rand() % 100 + 1;
     printf("Pensei num numero de 1 a 100.\n");
 
@@ -120,6 +120,8 @@ void jogar_advinhe(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
         tentativas = tentativas + 1;
     }
     printf("Acertou em %d tentativas, %s!\n", tentativas, quem);
+    partidas[pos] = partidas[pos] + 1;
+    salvar(apelidos, partidas, qtd);
 }
 
 void salvar(char apelidos[][TAM_APELIDO], int partidas[], int qtd) {
