@@ -1,3 +1,3 @@
-ana,1
-bia,0
-berssa,1
+BenicioHimmiku,0
+SamuelSodezoas,0
+IanCorpaSeca,0
