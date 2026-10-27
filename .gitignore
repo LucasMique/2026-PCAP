@@ -1,5 +1,9 @@
 prog-c/*
 !prog-c/*.c 
+fliperama-c/*
+fliperama-c/*.c
+fliperama-c/*.md
+fliperama-c/*.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
