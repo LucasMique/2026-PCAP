@@ -4,6 +4,8 @@ fliperama-c/*
 fliperama-c/*.c
 fliperama-c/*.md
 fliperama-c/*.txt
+proc-cpp/*
+!prog-cpp/*.cpp
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
