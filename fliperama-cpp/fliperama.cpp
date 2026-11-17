@@ -90,6 +90,11 @@ void cadastrar(vector<string> &apelidos, vector<int> &partidas) {
     titulo("NOVO JOGADOR");
     novo = ler_texto("Apelido (sem espacos)");
 
+    if (buscar(apelidos, novo) != -1) {
+        cout << "Apelido ja esta cadastrado." << endl;
+        return;
+    }
+
     apelidos.push_back(novo);
     partidas.push_back(0);
     cout << "Jogador " << novo << " cadastrado. " << endl;
