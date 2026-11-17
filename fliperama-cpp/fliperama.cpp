@@ -97,6 +97,7 @@ void cadastrar(vector<string> &apelidos, vector<int> &partidas) {
 
     apelidos.push_back(novo);
     partidas.push_back(0);
+    salvar(apelidos, partidas);
     cout << "Jogador " << novo << " cadastrado. " << endl;
 }
 
@@ -110,6 +111,24 @@ void listar(vector<string> &apelidos, vector<int> &partidas) {
     for (i = 0; i < qtd; i++) {
         cout << apelidos[i] << " | " << partidas[i] << " partidas" << endl;
     } 
+}
+
+void excluir(vector<string> &apelidos, vector<int> &partidas) {
+    string quem;
+    int pos;
+
+    titulo("EXCLUIR JOGADOR");
+    quem = ler_texto("Apelido de quem sai");
+    pos = buscar(apelidos, quem);
+    if (pos == -1) {
+        cout << "Apelido nao encontrado." << endl;
+        return;
+    }
+
+    apelidos.erase(apelidos.begin() + pos);
+    partidas.erase(partidas.begin() + pos);
+    salvar(apelidos, partidas);
+    cout << "Jogador " << quem << " excluido." << endl;
 }
 
 void jogar_advinhe(vector<string
@@ -142,6 +161,7 @@ void jogar_advinhe(vector<string
     cout << "Acertou em " << tentativas << " tentativas, " << quem << "!" << endl;
 
     partidas[pos] = partidas[pos] + 1;   // a partida so conta quando o jogo termina
+    salvar(apelidos, partidas);
 }    
 void mostrar_menu() {
     linha();
@@ -150,6 +170,7 @@ void mostrar_menu() {
     cout << "[1] Advinhe o Numero" << endl;
     cout << "[2] Cadastrar jogador" << endl;
     cout << "[3] Listar jogadores" << endl;
+    cout << "[4] Excluir jogadores" << endl;
     cout << "[0] Sair" << endl;
     linha();
 }
@@ -163,17 +184,19 @@ int main() {
     carregar(apelidos, partidas);
 
     mostrar_menu();
-    opcao = ler_numero("Sua escolha", 0, 3);
+    opcao = ler_numero("Sua escolha", 0, 4);
     while (opcao != 0) {
         if (opcao == 1) {
            jogar_advinhe(apelidos, partidas);
         } else if (opcao == 2) {
             cadastrar(apelidos, partidas);
-        } else {
+        } else if (opcao == 3) {
             listar(apelidos, partidas);
+        } else {
+            excluir(apelidos, partidas);
         }
         mostrar_menu();
-        opcao = ler_numero("Sua escolha", 0, 3);
+        opcao = ler_numero("Sua escolha", 0, 4);
     }
     
     salvar(apelidos, partidas);
